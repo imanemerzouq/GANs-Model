@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Faces Generator</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+            color: #333;
+        }
+        img {
+            margin-top: 30px;
+            max-width: 500px;
+            max-height: 500px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff5500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e64400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anime Faces Generator</h1>
+    <form method="POST" action="/generate">
+        <button type="submit">Generate Image</button>
+    </form>
+    
+    <div id="output"></div>
+
+    <script>
+        function generateImage() {
+            fetch('/generate')
+                .then(response => response.text())
+                .then(base64Data => {
+                    const img = document.createElement('img');
+                    img.src = 'data:image/png;base64,' + base64Data;
+                    document.getElementById('output').innerHTML = '';
+                    document.getElementById('output').appendChild(img);
+                });
+        }
+        
+        
+    </script>
+</body>
+</html>
