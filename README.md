@@ -6,3 +6,5 @@ In this project, we developed a generative model using a pre-existing anime data
 Using Gradio, a user-friendly library for creating user interfaces, we developed an interactive interface for generating and displaying the anime faces produced by our model in real time. You can interact with this interface to generate images and view them instantly.
 
 In the context of deploying an Anime Faces Generator template, we used Flask to create a user-friendly web interface where users can interact with the template to generate anime images.
+
+The dataset used : https://www.kaggle.com/datasets/splcher/animefacedataset
